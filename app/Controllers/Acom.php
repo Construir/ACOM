@@ -37,7 +37,11 @@ use App\Libraries\Formulario_sorteo as pdf_sorteo;
 use App\Libraries\Formulario_sorteo_sin_qr as pdf_sorteo_para_qr;
 use App\Libraries\Enviar_mail as email;
 use App\Libraries\Log_navegacion as navegacion;
+<<<<<<< HEAD
 
+=======
+//use App\Models\Motivo_finalizacion_tramites_modelo;
+>>>>>>> c36dfdff86ae41b0b538fd05dc1f43de13f915d3
 use App\Models\Motivo_finalizacion_tramites_modelo;
 
 use App\Libraries\Credencial as credencial_pdf;
