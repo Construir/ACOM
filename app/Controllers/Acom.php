@@ -30,12 +30,14 @@ use App\Models\Detalles_movimientos_causas_modelo;
 use App\Models\Movimientos_justicia_ordinaria_modelo;
 use App\Models\Movimientos_comision_medica_central_modelo;
 use App\Models\Log_ejecucion_tares_programadas_modelo;
+//AGREGO UNA LINEA DE PRUEBA PARA GIT
 
 use App\Libraries\Formulario_incripcion as pdf;
 use App\Libraries\Formulario_sorteo as pdf_sorteo;
 use App\Libraries\Formulario_sorteo_sin_qr as pdf_sorteo_para_qr;
 use App\Libraries\Enviar_mail as email;
 use App\Libraries\Log_navegacion as navegacion;
+
 use App\Models\Motivo_finalizacion_tramites_modelo;
 
 use App\Libraries\Credencial as credencial_pdf;
@@ -46,6 +48,7 @@ class Acom extends BaseController{
 		
 	function credenciales(){
 		
+		//ESTA LINEA LO QUE HACE ES IMPRIMIR UN PDF
 		$data = array('Nombre' => 'Claudio',
 					  'Apellido' => 'Ialonardi',					
 					  'Dni' => '25.062.614'
@@ -72,32 +75,40 @@ class Acom extends BaseController{
 
 	}
 	function mandar_mail(){		
+
 		//$resultado = mail('ialonardiclaudio@gmail.com', 'Sistema ACOM', 'Estimado, le informamos que su solicitud fue APROBADA.<br> Atentamente. Soporte Sistema ACOM desarrollo@colproba.org.ar');			
 		
-		$direccion_email = 'ialonardiclaudio@gmail.com';					
-		$asunto = 'Sistema ACOM';					
+		$direccion_email = 'ialonardiclaudio@gmail.com';
+		$asunto = 'Sistema ACOM';
 		$mensaje = 'Mail de prueba'. "<br>";
 		//$mensaje .= 'Atentamente. Soporte Sistema ACOM acom@colproba.org.ar';
-		
+
 		$email = new email();
-		
+
 		$email->enviar_mail($direccion_email,$asunto,$mensaje);
-		
+
 	}
+
 	/*
-	function mandar_mail(){		
+	function mandar_mail_test(){
 					
-		$mail_abogado = 'ialonardiclaudio@gmail.com';					
-		$asunto = 'Sistema ACOM';					
+		$mail_abogado = 'ialonardiclaudio@gmail.com';
+		$asunto = 'Sistema ACOM';
 		$mensaje_abogado = 'Estimado, le informamos que su solicitud fue APROBADA.<br> Atentamente. Soporte Sistema ACOM desarrollo@colproba.org.ar';
-		
+
 		$email = new email();
-		
+
 		$email->enviar_mail($mail_abogado,'',$asunto,$mensaje_abogado);
 	}*/
-	function pagina_en_construccion(){		
-	
-		echo view('encabezado');			
+	function pagina_en_construccion_test(){
+
+		echo view('encabezado');
+		echo view('pagina_en_construccion');
+
+	}
+	function pagina_en_construccion(){
+
+		echo view('encabezado');
 		echo view('pagina_en_construccion');
 
 	}
@@ -118,7 +129,7 @@ class Acom extends BaseController{
 					];
 		}
 		
-		echo view('encabezado');			
+		echo view('encabezado');
 		echo view('login_vista_abogados',$data);
 
 	}	
